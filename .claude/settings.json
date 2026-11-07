@@ -1,0 +1,56 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.claude/skills/gcloud-cost-ops/gcp-ops.sh accounts)",
+      "Bash(.claude/skills/gcloud-cost-ops/gcp-ops.sh auth:*)",
+      "Bash(.claude/skills/gcloud-cost-ops/gcp-ops.sh projects:*)",
+      "Bash(.claude/skills/gcloud-cost-ops/gcp-ops.sh inventory:*)",
+      "Bash(.claude/skills/gcloud-cost-ops/gcp-ops.sh costs:*)",
+      "Bash(.claude/skills/gcloud-cost-ops/gcp-ops.sh budgets:*)",
+      "Bash(.claude/skills/gcloud-cost-ops/gcp-ops.sh --help)",
+      "Bash(gcloud asset search-all-resources:*)",
+      "Bash(gcloud asset search-all-iam-policies:*)",
+      "Bash(gcloud billing accounts list:*)",
+      "Bash(gcloud billing projects describe:*)",
+      "Bash(gcloud billing budgets list:*)",
+      "Bash(gcloud projects list:*)",
+      "Bash(gcloud projects describe:*)",
+      "Bash(gcloud services list:*)",
+      "Bash(gcloud recommender recommendations list:*)",
+      "Bash(gcloud recommender insights list:*)",
+      "Bash(gcloud config:*)",
+      "Bash(gcloud auth list:*)",
+      "Bash(python3:*)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(find:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(wc:*)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/session-start.sh"
+          },
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/session-timezone.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
